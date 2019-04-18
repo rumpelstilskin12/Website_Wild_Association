@@ -1,0 +1,26 @@
+/*Personnalisation des classes bootstrap*/
+.header_nav{
+  background-color: #393e46;
+}
+
+
+/*a:after {
+  content: "\f107";/*unicode fleche*/
+.section1{
+  background-color:  #222831;
+  color:white;
+}
+.footer{
+  background-color:  #eeeeee;
+  color:000000;
+}
+.section2{
+  background-color:red;
+}
+#accueil{
+  width:100%;
+  height:100%;
+}
+.navbarDropdown{
+
+}
