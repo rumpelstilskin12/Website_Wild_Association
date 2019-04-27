@@ -1,3 +1,6 @@
+/* =====================|Admnistration|========================== */
+
+/* =====================|Public|========================== */
 /*Personnalisation des classes bootstrap*/
 .header_nav{
   background-color: #393e46;
@@ -11,11 +14,11 @@
   color:white;
 }
 .footer{
-  background-color:  #eeeeee;
+  background-color:   #393e46/*#eeeeee*/;
   color:000000;
 }
 .section2{
-  background-color:red;
+  background-color:blue;
 }
 #accueil{
   width:100%;

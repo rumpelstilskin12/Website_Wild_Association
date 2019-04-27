@@ -1,24 +1,3 @@
-<div class="container" style="background: #00adb5";>
-  <div class="row">
-    <div class="col-sm">
-      <h4>W.K.</h4>
-      <p>
-        Être humanitairement engagé, plus qu’une devise, un vrai état d’esprit
-      </p>
-    </div>
-    <div class="col-sm">
-      <h4>Contact</h4>
-    </div>
-    <div class="col-sm">
-      <h4>Je fais un don</h4>
-    </div>
-  </div>
-</div>
-
-
-
-
-
 <div class="container">
   <div class="row">
     <div class="col-sm w-100 p-3">

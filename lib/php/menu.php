@@ -6,7 +6,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
 
-            <img src="./Admin/image/banniere_pc.jpg" alt="banniere"/>&nbsp;
+            <!--<img src="./Admin/images/tiplouf.jpg" alt="banniere"/>&nbsp;-->
 
 
 
@@ -14,8 +14,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-
-                  <img src="./Admin/images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/>
+                  <a href="index.php"><img src="./Admin/images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/></a>
 
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active" >
@@ -23,7 +22,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Our work
+                        Species
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-lg-right">

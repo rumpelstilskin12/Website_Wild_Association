@@ -18,11 +18,10 @@ if (isset($_POST['submit_login'])) {
     }
 }
 ?>
-<form action="<?php print $_SERVER['PHP_SELF'];?>" method="post" class-"form-login">
+<form action="<?php print $_SERVER['PHP_SELF'];?>" method="post" class-"form-login" style="width:100%; padding-top:30px;padding-bottom: 30px;">
+    <!---<input type="submit" name="submit_login" id="submit_login" value="Se connecter"/>-->
 
-    <!--<input type="submit" name="submit_login" id="submit_login" value="Se connecter"/>-->
-
-<div class="col-4">
+<div class="col-lg-6" style="margin: 0 auto; border:solid white;border-radius:10px;">
            <div class="login-dark p-3 shadow-lg rounded">
                <div class="pt-3">
                    <h2 class="text-white ">Login | Sign In</h2>
@@ -31,7 +30,7 @@ if (isset($_POST['submit_login'])) {
                <form class="mt-5">
                    <div class="form-group">
                        <input type="email"
-                           class="form-control form-control-sm bg-light" id="admin"
+                           class="form-control form-control-sm bg-light" name="admin" id="admin"
                            placeholder="Email Id">
                    </div>
 

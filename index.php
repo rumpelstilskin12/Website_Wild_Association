@@ -46,7 +46,7 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
                 $_SESSION['page'] = $_GET['page'];
             }
             $path = "./page/".$_SESSION['page'];
-
+            $_SESSION = array();//vider la session
 
 
             if (file_exists($path)) {
