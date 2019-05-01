@@ -58,12 +58,18 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
             ?>
             </div>
         </section>
+        <section class="section2" style="background-color: #393e46;">
+          <?php
+          if (file_exists('./lib/php/menu.php')) {
+              require './lib/php/over_nav.php';
+          }
+          ?>
+        </section>
 
-
-        <footer class="footer">
+        <footer class="footer" style= "background-color:#eeeeee;">
             <!--<div class="container text-center w-100 p-3" >-->
               <?php
-              if (file_exists('./lib/php/menu.php')) {
+              if (file_exists('./lib/php/footer.php')) {
                   require './lib/php/footer.php';
               }
               ?>

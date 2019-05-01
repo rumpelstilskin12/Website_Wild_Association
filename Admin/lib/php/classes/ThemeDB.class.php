@@ -7,7 +7,7 @@ class themeDB {
         $this->_db = $db;
     }
 
-    public function getTheme($login,$password){
+  public function getTheme(/*$login,$password*/){
         try{
             $query = "select * from theme";
            // print $query;

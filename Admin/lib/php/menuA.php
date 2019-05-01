@@ -31,7 +31,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-lg-right">
-                  <button class="dropdown-item" href="./index.php?page=instrumentDigital.php">History</button>
+                  <button class="dropdown-item" href="./index.php?page=listeOfMembers.php">List of members</button>
                   <button class="dropdown-item"  href="./index.php?page=jquery.php">Commitments</button>
                   <button class="dropdown-item"  href="#">Contact</button>
                 </div>
@@ -43,14 +43,14 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-lg-right">
-                  <button class="dropdown-item" href="./index.php?page=instrumentDigital.php">History</button>
+                  <button class="dropdown-item" href="./index.php?page=listOfMissions.php">List of missions</button>
                   <button class="dropdown-item"  href="./index.php?page=jquery.php">Commitments</button>
                   <button class="dropdown-item"  href="#">Contact</button>
                 </div>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link  text-light" href="#" tabindex="-1" aria-disabled="true">Themes</a>
+                <a class="nav-link  text-light" href="./index.php?page=listofthemes.php" tabindex="-1" aria-disabled="true">Themes</a>
             </li>
 
 

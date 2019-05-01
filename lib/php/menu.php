@@ -56,7 +56,7 @@
                     </div>
 
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="donate">
                     <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Donate</a>
                 </li>
 

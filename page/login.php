@@ -42,7 +42,7 @@ if (isset($_POST['submit_login'])) {
 
                    <div class="form-group form-check">
                        <input type="checkbox" class="form-check-input" id="rememberCheckBox">
-                       <label class="form-check-label text-light" for="rememberCheckBox">Remember me?</label>
+                       <label class="form-check-label" for="rememberCheckBox" style="color:#00adb5;">Remember me</label>
                    </div>
 
                    <div class="mt-5">
@@ -52,13 +52,13 @@ if (isset($_POST['submit_login'])) {
                    </div>
 
                    <div class="text-center mt-2">
-                       <a href="#" class="text-warning">Forgot Password?</a>
+                       <a href="#" class="text" style="color:#00adb5;">Forgot Password</a>
                    </div>
 
                    <div class="mt-5">
                        <p class="text-white text-center">
                            Don't have an account?
-                           <a href="page/sign_up.php" class="text-warning">Click here to register</a>
+                           <a href="page/sign_up.php" class="text" style="color:#00adb5;">Click here to register</a>
                        </p>
                    </div>
                </form>

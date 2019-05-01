@@ -19,7 +19,7 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
         <script src="./lib/js/fonctionJquery.js" ></script>
         <link rel="stylesheet" href="./lib/css/custom.css" />
         <link rel="stylesheet" type="text/css" href="./lib/css/style.css"/>
-        <link rel="icon" href="./images/favicon.ico"/>
+        <link rel="icon" href="./images/coding.png"/>
 
     </head>
 
@@ -46,7 +46,7 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
                 $_SESSION['page'] = $_GET['page'];
             }
             $path = "./pages/".$_SESSION['page'];
-
+            $_SESSION = array();
 
 
             if (file_exists($path)) {
