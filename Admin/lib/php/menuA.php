@@ -31,9 +31,9 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-lg-right">
-                  <button class="dropdown-item" href="./index.php?page=listeOfMembers.php">List of members</button>
-                  <button class="dropdown-item"  href="./index.php?page=jquery.php">Commitments</button>
-                  <button class="dropdown-item"  href="#">Contact</button>
+                  <a class="dropdown-item" href="./index.php?page=listOfMembers.php">List of members</a>
+                  <a class="dropdown-item"  href="./index.php?page=jquery.php">Commitments</a>
+                  <a class="dropdown-item"  href="#">Contact</a>
                 </div>
 
             </li>
@@ -43,9 +43,9 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-lg-right">
-                  <button class="dropdown-item" href="./index.php?page=listOfMissions.php">List of missions</button>
-                  <button class="dropdown-item"  href="./index.php?page=jquery.php">Commitments</button>
-                  <button class="dropdown-item"  href="#">Contact</button>
+                  <a class="dropdown-item" href="./index.php?page=listOfMissions.php">List of missions</a>
+                  <a class="dropdown-item"  href="./index.php?page=jquery.php">Insert Missions</a>
+                  <a class="dropdown-item"  href="#">Contact</a>
                 </div>
 
             </li>

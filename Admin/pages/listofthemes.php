@@ -11,7 +11,6 @@ $types = $typ->getTheme();
 $nbr_type = count($types);
 ?>
 
-
 <div class="container">
     <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get">
             <table class="table table-striped">

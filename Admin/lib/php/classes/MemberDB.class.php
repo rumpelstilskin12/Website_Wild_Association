@@ -7,7 +7,7 @@ class memberDB {
         $this->_db = $db;
     }
 
-    public function getMember($login,$password){
+    public function getMember(){
         try{
             $query = "select * from member";
            // print $query;

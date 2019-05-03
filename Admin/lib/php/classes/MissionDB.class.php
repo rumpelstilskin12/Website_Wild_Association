@@ -7,7 +7,7 @@ class missionDB {
         $this->_db = $db;
     }
 
-    public function getMission($login,$password){
+    public function getMission(){
         try{
             $query = "select * from mission";
            // print $query;

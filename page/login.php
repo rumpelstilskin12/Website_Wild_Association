@@ -58,7 +58,7 @@ if (isset($_POST['submit_login'])) {
                    <div class="mt-5">
                        <p class="text-white text-center">
                            Don't have an account?
-                           <a href="page/sign_up.php" class="text" style="color:#00adb5;">Click here to register</a>
+                           <a href="index.php?page=sign_up.php" class="text" style="color:#00adb5;">Click here to register</a>
                        </p>
                    </div>
                </form>
