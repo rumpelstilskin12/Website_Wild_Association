@@ -15,19 +15,19 @@ $nbr_type = count($types);
             <table class="table table-striped">
               <thead>
                 <tr>
-                    <th scope="col"><span style="color:white;">idmember</span></th>
-                    <th scope="col"><span style="color:white;">lastname</span></th>
-                    <th scope="col"><span style="color:white;">firstname</span></th>
-                    <th scope="col"><span style="color:white;">phone</span></th>
-                    <th scope="col"><span style="color:white;">email</span></th>
-                    <th scope="col"><span style="color:white;">password</span></th>
-                    <th scope="col"><span style="color:white;">birthdate</span></th>
-                    <th scope="col"><span style="color:white;">street</span></th>
-                    <th scope="col"><span style="color:white;">city</span></th>
-                    <th scope="col"><span style="color:white;">postcode</span></th>
-                    <th scope="col"><span style="color:white;">country</span></th>
-                    <th scope="col"><span style="color:white;">job</span></th>
-                    <th scope="col"><span style="color:white;">iddon</span></th>
+                    <th><span style="color:white;">idmember</span></th>
+                    <th><span style="color:white;">lastname</span></th>
+                    <th><span style="color:white;">firstname</span></th>
+                    <th><span style="color:white;">phone</span></th>
+                    <th><span style="color:white;">email</span></th>
+                    <th><span style="color:white;">password</span></th>
+                    <th><span style="color:white;">birthdate</span></th>
+                    <th><span style="color:white;">street</span></th>
+                    <th><span style="color:white;">city</span></th>
+                    <th><span style="color:white;">postcode</span></th>
+                    <th><span style="color:white;">country</span></th>
+                    <th><span style="color:white;">job</span></th>
+                    <th><span style="color:white;">iddon</span></th>
 
 
                 </tr>
@@ -36,7 +36,7 @@ $nbr_type = count($types);
                   <?php
                    for ($i = 0; $i < $nbr_type; $i++) {?>
                 <tr>
-                    <th scope="row"><span style="color:white;"><?php print $types[$i]->idmember;?></span></th>
+                    <th><span style="color:white;"><?php print $types[$i]->idmember;?></span></th>
                     <td><span style="color:white;"><?php  print $types[$i]->lastname; ?></span></td>
                     <td><span style="color:white;"><?php print $types[$i]->firstname; ?></span></td>
                     <td><span style="color:white;"><?php  print $types[$i]->phone; ?></span></td>

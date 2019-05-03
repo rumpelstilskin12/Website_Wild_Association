@@ -17,19 +17,19 @@ $nbr_type = count($types);
             <table class="table table-striped">
               <thead>
                 <tr>
-                    <th scope="col"><span style="color:white;">idmission</span></th>
-                    <th scope="col"><span style="color:white;">role mission</span></th>
-                    <th scope="col"><span style="color:white;">start date</span></th>
-                    <th scope="col"><span style="color:white;">end date</span></th>
-                    <th scope="col"><span style="color:white;">country mission</span></th>
-                    <th scope="col"><span style="color:white;">description mission</span></th>
+                    <th ><span style="color:white;">idmission</span></th>
+                    <th ><span style="color:white;">role mission</span></th>
+                    <th ><span style="color:white;">start date</span></th>
+                    <th><span style="color:white;">end date</span></th>
+                    <th><span style="color:white;">country mission</span></th>
+                    <th><span style="color:white;">description mission</span></th>
                 </tr>
               </thead>
               <tbody>
                   <?php
                    for ($i = 0; $i < $nbr_type; $i++) {?>
                 <tr>
-                    <th scope="row"><span style="color:white;"><?php print $types[$i]->idmission;?></span></th>
+                    <th><span style="color:white;"><?php print $types[$i]->idmission;?></span></th>
                     <td><span style="color:white;"><?php  print $types[$i]->rolem; ?></span></td>
                     <td><span style="color:white;"><?php print $types[$i]->startdate; ?></span></td>
                     <td><span style="color:white;"><?php  print $types[$i]->enddate; ?></span></td>
