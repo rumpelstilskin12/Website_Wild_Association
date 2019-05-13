@@ -14,7 +14,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                  <a href="index.php"><img src="./Admin/images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/></a>
+                  <a href="index.php?page=accueil.php"><img src="./Admin/images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/></a>
 
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active" >

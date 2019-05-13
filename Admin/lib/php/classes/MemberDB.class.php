@@ -19,7 +19,7 @@ class MemberDB extends Member{
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
             $resultset->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
-            $resultset->bindValue(':phone', $data['phone'], PDO::PARAM_STR);
+
             $resultset->bindValue(':email', $data['email'], PDO::PARAM_STR);
 
             //$resultset->bindValue(':email2', $data['email2'], PDO::PARAM_STR);
@@ -29,9 +29,9 @@ class MemberDB extends Member{
             $resultset->bindValue(':city', $data['city'], PDO::PARAM_STR);
             $resultset->bindValue(':postcode', $data['postcode'], PDO::PARAM_STR);
             $resultset->bindValue(':country', $data['country'], PDO::PARAM_STR);
-
+            $resultset->bindValue(':phone', $data['phone'], PDO::PARAM_STR);
             $resultset->bindValue(':job', $data['job'], PDO::PARAM_STR);
-            $resultset->bindValue(':statuts', $data['job'], PDO::PARAM_STR);
+            $resultset->bindValue(':statuts', $data['statuts'], PDO::PARAM_STR);
             $resultset->execute();
             $retour = $resultset->fetchColumn(0); // permet le retour de la fonction embarquée (pgadmin)
 

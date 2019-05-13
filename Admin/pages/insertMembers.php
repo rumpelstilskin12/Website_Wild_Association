@@ -5,9 +5,9 @@ if (isset($_GET['submit'])) {
    extract($_GET, EXTR_OVERWRITE);
 
    if (empty($lastname) || empty($firstname) || empty($phone)||empty($email) || empty($password1) || empty($birthdate)
-    ||empty($street) || empty($city) || empty($postcode)||empty($country) || empty($job) || empty($statuts) ){
+    ){
        $erreur = "<span class='txtRouge txtGras'>Veuillez remplir tous les champs</span>";
-   } else {
+  } else {
        $member = new MemberDB($cnx);
        $retour = $member->addMember($_GET);
        print "Insertion dans la base de données réussie ! <br/>";

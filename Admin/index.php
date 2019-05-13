@@ -5,6 +5,7 @@ session_start();
 <?php
 require './lib/php/admin_liste_include.php';
 $cnx = Connexion:: getInstance($dsn, $user, $pass);
+
 //include('lib/php/v_connexion.php');
 
 ?>
@@ -29,6 +30,7 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
             <div class ="container" >
 
                 <?php
+
                 if (file_exists('./lib/php/menuA.php')) {
                     require './lib/php/menuA.php';
                 }
