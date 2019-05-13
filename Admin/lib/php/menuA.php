@@ -32,8 +32,7 @@
 
                 <div class="dropdown-menu dropdown-menu-lg-right">
                   <a class="dropdown-item" href="./index.php?page=listOfMembers.php">List of members</a>
-                  <a class="dropdown-item"  href="./index.php?page=jquery.php">Commitments</a>
-                  <a class="dropdown-item"  href="#">Contact</a>
+                  <a class="dropdown-item"  href="./index.php?page=insertMembers.php">Insert members</a>
                 </div>
 
             </li>
@@ -44,13 +43,19 @@
 
                 <div class="dropdown-menu dropdown-menu-lg-right">
                   <a class="dropdown-item" href="./index.php?page=listOfMissions.php">List of missions</a>
-                  <a class="dropdown-item"  href="./index.php?page=jquery.php">Insert Missions</a>
-                  <a class="dropdown-item"  href="#">Contact</a>
+                  <a class="dropdown-item"  href="./index.php?page=insertMissions.php">Insert missions</a>
                 </div>
 
             </li>
-            <li class="nav-item">
-                <a class="nav-link  text-light" href="./index.php?page=listofthemes.php" tabindex="-1" aria-disabled="true">Themes</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Themes
+              </a>
+
+                <div class="dropdown-menu dropdown-menu-lg-right">
+                  <a class="dropdown-item" href="./index.php?page=listofthemes.php">List of themes</a>
+                  <a class="dropdown-item" href="./index.php?page=insertThemes.php">Insert themes</a>
+                </div>
             </li>
 
 

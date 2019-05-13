@@ -1,5 +1,5 @@
 <?php
-class functionDB {
+class CarryoutDB extends Carryout {
      private $_db;
     private $_array = array();
 
@@ -7,9 +7,9 @@ class functionDB {
         $this->_db = $db;
     }
 
-    public function getFunction($login,$password){
+    public function getFunction(){
         try{
-            $query = "select * from function";
+            $query = "select * from carryout";
            // print $query;
             $resultset = $this->_db->prepare($query);
             //$resultset->bindValue(':login',$login);
@@ -17,7 +17,7 @@ class functionDB {
             $resultset->execute();
 
             while($data = $resultset->fetch()){
-                $_array[] = new Function($data);
+                $_array[] = new Carryout($data);
             }
         }
         catch(PDOException $e){

@@ -5,17 +5,28 @@
 if (isset($_POST['submit_login'])) {
 
     extract($_POST, EXTR_OVERWRITE);
-    $log = new AdminDB($cnx);
-    $admin = $log->getAdmin($admin, $password);
-    var_dump($admin);
-    if (is_null($admin)) {
+    $log = new MemberDB($cnx);
+    $member = $log->getMember($member, $password1);
+    var_dump($member);
+    if (is_null($member)) {
         print "</br>Données incorrectes";
     } else {
-        $_SESSION['admin'] = 1;
+        $_SESSION['member'] = 1;
         unset($_SESSION['page']);
         print "<meta http-equiv=\"refresh\": Content=\"3;URL=./admin/index.php\">";
 
+
     }
+}
+?>
+<?php 
+
+if(isset($_POST['remember'])){
+  setcookie("cookiemail", $_POST['login'], time()+60*60*24*100, "/");
+  setcookie("cookiepass", $_POST['password'], time()+60*60*24*100, "/");
+} else {
+  setcookie("cookiemail","" , NULL, "/");
+  setcookie("cookiepass","" , NULL, "/");
 }
 ?>
 <form action="<?php print $_SERVER['PHP_SELF'];?>" method="post" class-"form-login" style="width:100%; padding-top:30px;padding-bottom: 30px;">
@@ -30,14 +41,14 @@ if (isset($_POST['submit_login'])) {
                <form class="mt-5">
                    <div class="form-group">
                        <input type="email"
-                           class="form-control form-control-sm bg-light" name="admin" id="admin"
-                           placeholder="Email Id">
+                           class="form-control form-control-sm bg-light" name="member" id="member"
+                           placeholder="Email Id"/>
                    </div>
 
                    <div class="form-group">
                        <input type="password"
                            class="form-control form-control-sm bg-light"
-                           placeholder="Password"  name="password" id="password">
+                           placeholder="Password"  name="password1" id="password1">
                    </div>
 
                    <div class="form-group form-check">
