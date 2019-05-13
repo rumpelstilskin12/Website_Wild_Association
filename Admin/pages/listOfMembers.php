@@ -5,6 +5,7 @@
 <br/><br/>
 <?php
 //récupération des elements pour la liste déroulante
+
 $typ = new MemberDB($cnx);
 $types = $typ->__getMember();
 $nbr_type = count($types);

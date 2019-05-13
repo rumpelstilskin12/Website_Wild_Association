@@ -1,15 +1,17 @@
+<?php
+include('lib/php/v_connection.php');
+//récupération des elements pour la liste déroulante
+$typ = new ThemeDB($cnx);
+$types = $typ->getTheme();
+$nbr_type = count($types);
+?>
 
 <hgroup>
     <h3 class="aligner txtGras">Liste des themes</h3>
 </hgroup>
 
 <br/><br/>
-<?php
-//récupération des elements pour la liste déroulante
-$typ = new ThemeDB($cnx);
-$types = $typ->getTheme();
-$nbr_type = count($types);
-?>
+
 
 <div class="container">
     <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get">

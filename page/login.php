@@ -12,21 +12,16 @@ if (isset($_POST['submit_login'])) {
         print "</br>Données incorrectes";
     } else {
         $_SESSION['member'] = 1;
+        $_SESSION['statuts']=$member[0]->statuts;
         unset($_SESSION['page']);
+        if($_SESSION['statuts']==1){
         print "<meta http-equiv=\"refresh\": Content=\"3;URL=./admin/index.php\">";
-
+         }
+        else {
+          print "<meta http-equiv=\"refresh\": Content=\"3;URL=./index.php\">";
+        }
 
     }
-}
-?>
-<?php 
-
-if(isset($_POST['remember'])){
-  setcookie("cookiemail", $_POST['login'], time()+60*60*24*100, "/");
-  setcookie("cookiepass", $_POST['password'], time()+60*60*24*100, "/");
-} else {
-  setcookie("cookiemail","" , NULL, "/");
-  setcookie("cookiepass","" , NULL, "/");
 }
 ?>
 <form action="<?php print $_SERVER['PHP_SELF'];?>" method="post" class-"form-login" style="width:100%; padding-top:30px;padding-bottom: 30px;">

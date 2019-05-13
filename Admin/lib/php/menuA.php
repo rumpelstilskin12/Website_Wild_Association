@@ -57,6 +57,21 @@
                   <a class="dropdown-item" href="./index.php?page=insertThemes.php">Insert themes</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Function
+              </a>
+
+                <div class="dropdown-menu dropdown-menu-lg-right">
+                  <a class="dropdown-item" href="./index.php?page=listOfFunctions.php">List of function</a>
+                  <a class="dropdown-item" href="./index.php?page=insertFunctions.php">Insert function</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  text-light" href="index.php?page=disconnect.php">
+                    Déconnexion
+                </a>
+            </li>
 
 
 

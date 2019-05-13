@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_GET['submit_signup'])) {
     extract($_GET, EXTR_OVERWRITE);
 

@@ -1,6 +1,7 @@
  <h3 class="aligner txtGras">Insertion Themes:</h3>
 
 <?php
+include('lib/php/v_connection.php');
 if (isset($_GET['submit'])) {
     extract($_GET, EXTR_OVERWRITE);
 

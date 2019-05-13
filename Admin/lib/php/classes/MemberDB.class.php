@@ -89,5 +89,19 @@ class MemberDB extends Member{
             return null;
         }
     }
-    //put your code here
+    //put your code her
+    public function updateMember($champ,$nouveau,$id){
+
+         try {
+
+             $query="UPDATE member set ".$champ." = '".$nouveau."' where idmember ='".$id."'";
+            // var_dump($id);
+             $resultset = $this->_db->prepare($query);
+             $resultset->execute();
+
+         }catch(PDOException $e){
+             print $e->getMessage();
+         }
+     }
+
 }
