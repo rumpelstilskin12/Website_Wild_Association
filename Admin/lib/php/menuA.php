@@ -13,14 +13,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-      <a href="index.php"><img src="./images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/></a>
+      <a href="index.php?page=home.php"><img src="./images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/></a>
 
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active" >
               <!---<img src="./Admin/images/tiplouf.jpg" style="height: 60px;"/>-->
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link text-light" href="./index.php?page=donation.php" role="button">
                     Donation
                 </a>
 

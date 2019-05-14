@@ -5,7 +5,7 @@
 <br/><br/>
 <?php
 //récupération des elements pour la liste déroulante
-
+include('lib/php/v_connection.php');
 $typ = new MemberDB($cnx);
 $types = $typ->__getMember();
 $nbr_type = count($types);
@@ -13,7 +13,7 @@ $nbr_type = count($types);
 
 <div class="container">
     <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get">
-            <table class="table table-striped">
+            <table class="table-responsive table table-striped">
               <thead>
                 <tr>
                     <th><span style="color:white;">idmember</span></th>
@@ -56,4 +56,5 @@ $nbr_type = count($types);
                 </tbody>
             </table>
     </form>
+
 </div>

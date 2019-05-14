@@ -8,9 +8,9 @@ class MemberDB extends Member{
     }
     public function addMember($data) {
 
-        $query = "select addmember(:lastname,:firstname,:email,"
+        $query = "select addmember(:lastname,:firstname,:phone,:email,"
                 . ":password1,:birthdate,"
-                . ":street,:city,:postcode,:country,:phone,:job,:statuts) "
+                . ":street,:city,:postcode,:country,:job,:statuts) "
                 . "as retour";
 
 
@@ -19,7 +19,7 @@ class MemberDB extends Member{
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
             $resultset->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
-
+            $resultset->bindValue(':phone', $data['phone'], PDO::PARAM_STR);
             $resultset->bindValue(':email', $data['email'], PDO::PARAM_STR);
 
             //$resultset->bindValue(':email2', $data['email2'], PDO::PARAM_STR);
@@ -29,9 +29,47 @@ class MemberDB extends Member{
             $resultset->bindValue(':city', $data['city'], PDO::PARAM_STR);
             $resultset->bindValue(':postcode', $data['postcode'], PDO::PARAM_STR);
             $resultset->bindValue(':country', $data['country'], PDO::PARAM_STR);
-            $resultset->bindValue(':phone', $data['phone'], PDO::PARAM_STR);
+
             $resultset->bindValue(':job', $data['job'], PDO::PARAM_STR);
             $resultset->bindValue(':statuts', $data['statuts'], PDO::PARAM_STR);
+            $resultset->execute();
+            $retour = $resultset->fetchColumn(0); // permet le retour de la fonction embarquée (pgadmin)
+
+
+
+            return $retour;
+        } catch (PDOException $e) {
+            print "<br/>Echec de l'insertion";
+            print $e->getMessage();
+        }
+    }
+    public function __addMember($data) {
+
+        $query = "select addmember(:lastname,:firstname,:phone,:email,"
+                . ":password1,:birthdate,"
+                . ":street,:city,:postcode,:country,:job,:statuts) "
+                . "as retour";
+
+
+// ajouter_client = fonction que l'on va créer dans pgadmin
+        try {
+            $statuts=0;
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
+            $resultset->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
+            $resultset->bindValue(':phone', $data['phone'], PDO::PARAM_STR);
+            $resultset->bindValue(':email', $data['email'], PDO::PARAM_STR);
+
+            //$resultset->bindValue(':email2', $data['email2'], PDO::PARAM_STR);
+            $resultset->bindValue(':password1', $data['password1'], PDO::PARAM_STR);
+            $resultset->bindValue(':birthdate', $data['birthdate'], PDO::PARAM_STR);
+            $resultset->bindValue(':street', $data['street'], PDO::PARAM_STR);
+            $resultset->bindValue(':city', $data['city'], PDO::PARAM_STR);
+            $resultset->bindValue(':postcode', $data['postcode'], PDO::PARAM_STR);
+            $resultset->bindValue(':country', $data['country'], PDO::PARAM_STR);
+
+            $resultset->bindValue(':job', $data['job'], PDO::PARAM_STR);
+            $resultset->bindValue(':statuts', $statuts['statuts'], PDO::PARAM_STR);
             $resultset->execute();
             $retour = $resultset->fetchColumn(0); // permet le retour de la fonction embarquée (pgadmin)
 

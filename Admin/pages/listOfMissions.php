@@ -5,6 +5,7 @@
 
 <br/><br/>
 <?php
+include('lib/php/v_connection.php');
 //récupération des elements pour la liste déroulante
 
 $typ = new MissionDB($cnx);

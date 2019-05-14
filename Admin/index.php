@@ -3,10 +3,11 @@
 session_start();
 ?>
 <?php
+include('lib/php/v_connection.php');
 require './lib/php/admin_liste_include.php';
 $cnx = Connexion:: getInstance($dsn, $user, $pass);
 
-//include('lib/php/v_connexion.php');
+
 
 ?>
 
