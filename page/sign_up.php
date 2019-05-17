@@ -8,7 +8,10 @@ if (isset($_GET['submit_signup'])) {
         $erreur = "<span class='txtRouge txtGras'>Veuillez remplir tous les champs obligatoire</span>";
     } else {
         $member = new MemberDB($cnx);
-        $retour = $member->__addMember($_GET);
+        $retour = $member->addMember2($_GET);
+        $_SESSION['statuts']=$statuts;
+
+
         print "Insertion dans la base de données réussie ! <br/>";
 
     }
@@ -105,9 +108,9 @@ if (isset($erreur))
 
                 </div>
 
-
+                <input type="hidden" name="statuts" value="0" />
                 <input type="submit" name="submit_signup" id="submit_signup" class="btn btn-sm btn-light btn-block" value="Sign up" >
-                <!--<input type="reset" id="reset" value="Annuler"/>-->
+
                 </form>
             </div>
         </div>

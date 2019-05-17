@@ -43,11 +43,11 @@ class MemberDB extends Member{
             print $e->getMessage();
         }
     }
-    public function __addMember($data) {
+    public function addMember2($data) {
 
         $query = "select addmember(:lastname,:firstname,:phone,:email,"
                 . ":password1,:birthdate,"
-                . ":street,:city,:postcode,:country,:job,:status) "
+                . ":street,:city,:postcode,:country,:job,:statuts) "
                 . "as retour";
 
 
@@ -69,7 +69,7 @@ class MemberDB extends Member{
             $resultset->bindValue(':country', $data['country'], PDO::PARAM_STR);
 
             $resultset->bindValue(':job', $data['job'], PDO::PARAM_STR);
-            $resultset->bindValue(':statuts', $statuts, PDO::PARAM_STR);
+            $resultset->bindValue(':statuts',0, PDO::PARAM_STR);
             $resultset->execute();
             $retour = $resultset->fetchColumn(0); // permet le retour de la fonction embarquée (pgadmin)
 

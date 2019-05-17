@@ -12,7 +12,8 @@ if (isset($_POST['submit_login'])) {
         print "</br>Données incorrectes";
     } else {
         $_SESSION['member'] = 1;
-        $_SESSION['statuts']=$member[0]->statuts;
+        $_SESSION['statuts']=0;
+        print "sess ".$_SESSION['statuts'];
         $_SESSION['idmember']=$member[0]->idmember;
         unset($_SESSION['page']);
         if($_SESSION['statuts']==1){
