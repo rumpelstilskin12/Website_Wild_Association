@@ -27,8 +27,6 @@ if (isset($erreur))
                <div class="pt-3">
                    <h2 class="text-dark text-center">Donate</h2>
                </div>
-
-               <form class="mt-5">
                    <div class="form-group">
                        <input type="txt"
                            class="form-control form-control-sm bg-light border border-dark" name="amount" id="amount"
@@ -48,16 +46,17 @@ if (isset($erreur))
                                                 $themes = $theme->getTheme();
                                                 $nbr = count($themes);
                                             ?>
-                                            <select class="form-control">
-                                                <option class="hidden" selected disabled>what species do you want to support </option>
+                                            <select class="form-control" name="idtheme">
+                                                <option class="hidden"  selected disabled>what species do you want to support </option>
                                                  <?php
                                                     for ($i = 0; $i < $nbr; $i++) {?>
-                                                <option><?php print $themes[$i]->idtheme;?></option>
+                                                <option value="<?php print $themes[$i]->idtheme;?>"><?php print $themes[$i]->themename;?></option>
                                                      <?php } ?>
                                             </select>
                   </div>
                    <div class="mt-5 pt-3 ">
-                       <button class="btn btn-sm btn-light col border border-dark"  type="submit" name="submit_don" id="submit_don">
+                       <input type="hidden" name="idmember" value="<?php print $_SESSION['idmember'];?>"/>
+                       <button class="btn btn-sm btn-light col border border-dark"  type="submit" name="submit_don" id="submit_don" value="1">
                            donate
                        </button>
                    </div>

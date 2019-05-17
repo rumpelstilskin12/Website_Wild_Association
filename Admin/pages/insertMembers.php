@@ -1,4 +1,4 @@
-<h3 class="aligner txtGras">Insertion Members:</h3>
+
 
 <?php
 if (isset($_GET['submit'])) {
@@ -22,75 +22,73 @@ if (isset($erreur))
 ?>
 
 
-<div class="container">
 
-   <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" id="form_inscription">
-       <div class ="form-group">
 
-       <br/>
+<div class="container py-3">
+
+   <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" id="form_inscription" class="col-lg-6 py-3" style="margin: 0 auto; border:solid white;border-radius:10px;">
 
        <label for="lastname">Lastname :</label>
-       <input type="txt" id="lastname" name="lastname" placeholder="Pogba"/>
-       <br/>
+       <input class="form-control form-control-sm bg-light" type="txt" id="lastname" name="lastname" placeholder="Pogba"/>
+
 
 
        <label for="firstname">Firstname :</label>
-       <input type="txt" id="firstname" name="firstname" placeholder="Paul"/>
-       <br/>
+       <input  class="form-control form-control-sm bg-light" type="txt" id="firstname" name="firstname" placeholder="Paul"/>
+
 
        <label  for="phone">phone :</label>
-       <input type="phone" name="phone" id="phone"/>
+       <input class="form-control form-control-sm bg-light" type="phone" name="phone" id="phone"/>
 
-       <br/>
+
 
        <label  for="email">email :</label>
-       <input type="email" name="email" id="phone"/>
+       <input class="form-control form-control-sm bg-light" type="email" name="email" id="phone"/>
 
-       <br/>
+
 
        <label  for="password1">password :</label>
-       <input type="password" name="password1" id="password1"/>
+       <input class="form-control form-control-sm bg-light" type="password" name="password1" id="password1"/>
 
-       <br/>
+
 
        <label  for="birthdate">birthdate :</label>
-       <input type="date" name="birthdate" id="birthdate"/>
+       <input class="form-control form-control-sm bg-light" type="date" name="birthdate" id="birthdate"/>
 
-       <br/>
+
 
        <label  for="street">street :</label>
-       <input type="txt" name="street" id="street"/>
+       <input  class="form-control form-control-sm bg-light" type="txt" name="street" id="street"/>
 
-       <br/>
+
 
        <label  for="city">City :</label>
-       <input type="txt" name="city" id="city"/>
+       <input class="form-control form-control-sm bg-light" type="txt" name="city" id="city"/>
 
-       <br/>
+
 
        <label  for="postcode">Postcode :</label>
-       <input type="txt" name="postcode" id="postcode"/>
+       <input class="form-control form-control-sm bg-light" type="txt" name="postcode" id="postcode"/>
 
-       <br/>
+
 
        <label  for="country">Country :</label>
-       <input type="txt" name="country" id="country"/>
+       <input class="form-control form-control-sm bg-light" type="txt" name="country" id="country"/>
 
-       <br/>
+
 
         <label  for="job">Job :</label>
-        <input type="txt" name="job" id="job"/>
+        <input class="form-control form-control-sm bg-light" type="txt" name="job" id="job"/>
 
-        <br/>
+
 
         <label  for="statuts">Statuts :</label>
-        <input type="txt" name="statuts" id="statuts"/>
+        <input class="form-control form-control-sm bg-light" type="txt" name="statuts" id="statuts"/>
 
-        <br/>
-       <input type="submit" name="submit" id="submit" value="valider"/>
+      </br>
+       <input class="btn btn-sm btn-light col" type="submit" name="submit" id="submit" value="valider"/>
 
        </div>
 
    </form>
-
 </div>

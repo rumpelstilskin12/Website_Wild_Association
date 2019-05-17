@@ -13,6 +13,7 @@ if (isset($_POST['submit_login'])) {
     } else {
         $_SESSION['member'] = 1;
         $_SESSION['statuts']=$member[0]->statuts;
+        $_SESSION['idmember']=$member[0]->idmember;
         unset($_SESSION['page']);
         if($_SESSION['statuts']==1){
         print "<meta http-equiv=\"refresh\": Content=\"3;URL=./admin/index.php\">";

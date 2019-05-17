@@ -6,7 +6,7 @@ class DonDB extends Don {
     public function __construct($db){
         $this->_db = $db;
     }
-    public function addDon(){
+    public function addDon($data){
 
               $query = "select adddon(:amount,:datedon,:idtheme,:idmember) "
                       . "as retour";
