@@ -5,7 +5,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
 
-        <img class="img-fluid" src="./images/tiplouf.jpg" alt="banniere" style="height: 60px;"/>&nbsp;
+        <img class="img-fluid .hidden-sm-down" src="./images/tiplouf.jpg" alt="banniere" style="height: 60px;"/>&nbsp;
 
 
 
@@ -13,7 +13,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-      <a href="index.php?page=home.php"><img src="./images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/></a>
+      <a href="index.php?page=home.php"><img src="./images/tiplouf.jpg" classe="img-fluid .hidden-sm-up" style="height: 60px;" alt="tiplouf image"/></a>
 
         <ul class="navbar-nav mx-auto">
             <li class="nav-item active" >
@@ -44,6 +44,7 @@
                 <div class="dropdown-menu dropdown-menu-lg-right">
                   <a class="dropdown-item" href="./index.php?page=listOfMissions.php">List of missions</a>
                   <a class="dropdown-item"  href="./index.php?page=insertMissions.php">Insert missions</a>
+                  <a class="dropdown-item"  href="./index.php?page=listOfMemberCarryoutMission.php">Mission to perform</a>
                 </div>
 
             </li>
@@ -57,16 +58,7 @@
                   <a class="dropdown-item" href="./index.php?page=insertThemes.php">Insert themes</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Function
-              </a>
 
-                <div class="dropdown-menu dropdown-menu-lg-right">
-                  <a class="dropdown-item" href="./index.php?page=listOfFunctions.php">List of function</a>
-                  <a class="dropdown-item" href="./index.php?page=insertFunctions.php">Insert function</a>
-                </div>
-            </li>
             <li class="nav-item">
                 <a class="nav-link  text-light" href="index.php?page=disconnect.php">
                     Déconnexion

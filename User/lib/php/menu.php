@@ -14,7 +14,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                  <a href="index.php?page=accueil.php"><img src="./Admin/images/tiplouf.jpg" class="hidden-xs" style="height: 60px;" alt="tiplouf image"/></a>
+                  <a href="index.php?page=accueil.php"><img src="./Admin/images/tiplouf.jpg" style="height: 60px;" alt="tiplouf image"/></a>
 
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active" >
@@ -51,25 +51,14 @@
                     </div>
 
                 </li>
-
-                <?php if(isset($_SESSION['member'])){?>
                 <li class="nav-item" id="donate">
                     <a class="nav-link text-light" href="./index.php?page=donate.php" role="button">Donate</a>
                 </li>
 
-                <li class="nav-item pl-5">
-                  <a href="index.php?page=disconnect.php" class="btn btn-dark border border-white" role="button" aria-pressed="true">Disconnect</a>
-
-                <?php }?>
-                  <?php if(empty($_SESSION['member'])){ ?>
-                  <li class="nav-item  pl-5">
-                    <a href="index.php?page=login.php" class="btn btn-dark border border-white" role="button" aria-pressed="true">Login</a>
-
+                  <li class="nav-item pl-5">
+                    <a href="index.php?page=disconnect.php" class="btn btn-dark border border-white" role="button" aria-pressed="true">Disconnect</a>
+                    <!--<button type="button" class="btn btn-dark border border-white" href="index.php?page=login.php"> Login</button>-->
                   </li>
-                  <li class="nav-item  pl-3 ">
-                    <a href="index.php?page=sign_up.php" class="btn btn-dark border border-white"role="button" aria-pressed="true">Sign up</a>
-                  </li>
-                <?php }?>
 
             </ul>
         </div>

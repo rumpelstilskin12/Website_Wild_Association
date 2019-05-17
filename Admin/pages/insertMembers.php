@@ -1,4 +1,4 @@
-<h3 class="aligner txtGras">Insertion Themes:</h3>
+<h3 class="aligner txtGras">Insertion Members:</h3>
 
 <?php
 if (isset($_GET['submit'])) {
@@ -21,8 +21,6 @@ if (isset($erreur))
    print $erreur;
 ?>
 
-
-<span class="txtGras">Veuillez entrer vos coordonnées :</span> <br/><br/>
 
 <div class="container">
 

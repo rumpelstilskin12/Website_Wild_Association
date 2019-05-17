@@ -1,4 +1,6 @@
- <h3 class="aligner txtGras">Insertion Themes:</h3>
+<hgroup>
+<h3 class="aligner txtGras">Create a new themes:</h3>
+</hgroup>
 
 <?php
 include('lib/php/v_connection.php');
@@ -21,8 +23,6 @@ if (isset($erreur))
     print $erreur;
 ?>
 
-
-<span class="txtGras">Veuillez entrer vos coordonnées :</span> <br/><br/>
 
 <div class="container">
 

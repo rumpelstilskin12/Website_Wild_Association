@@ -1,3 +1,5 @@
+//tableau editable vue member carryout mission
+
 $(document).ready(function(){
 
        $("span[id]").click(function () {
@@ -32,7 +34,7 @@ $(document).ready(function(){
                     type: 'GET',
                     data: parametre,
                     dataType: "text",
-                    url: "./Admin/lib/php/ajax/ajaxUpdateIngredient.php",
+                    url: "./lib/php/ajax/ajaxUpdateMCM.php",
                     success: function (data) {
                        //rien de particulier à faire
                         console.log("success");

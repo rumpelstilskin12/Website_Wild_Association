@@ -12,7 +12,7 @@ if (isset($_GET['submit_signup'])) {
         print "Insertion dans la base de données réussie ! <br/>";
 
     }
-    //var_dump($_GET);
+    var_dump($_GET);
 }
 
 
@@ -21,10 +21,10 @@ if (isset($erreur))
 ?>
 
 <div id="fullscreen_bg" class="fullscreen_bg"/>
- <form class="form-signin" action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" style="width:100%; padding-top:30px;padding-bottom: 30px;>
+ <form class="form-signin" action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" style="width:100%; padding-top:30px;padding-bottom: 30px;">
 <div class="container" >
-    <div class="row">
-        <div class="col-lg-6" style="margin: 0 auto; border:solid white;border-radius:10px;>
+    <div class="row" >
+        <div class="col-lg-6 pb-3" style="margin: 0 auto; border:solid white;border-radius:10px;">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="text-center pb-3 pt-3">

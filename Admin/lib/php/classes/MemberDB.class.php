@@ -14,7 +14,7 @@ class MemberDB extends Member{
                 . "as retour";
 
 
-// ajouter_client = fonction que l'on va créer dans pgadmin
+// addmember = fonction que l'on va créer dans pgadmin
         try {
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
@@ -47,11 +47,11 @@ class MemberDB extends Member{
 
         $query = "select addmember(:lastname,:firstname,:phone,:email,"
                 . ":password1,:birthdate,"
-                . ":street,:city,:postcode,:country,:job,:statuts) "
+                . ":street,:city,:postcode,:country,:job,:status) "
                 . "as retour";
 
 
-// ajouter_client = fonction que l'on va créer dans pgadmin
+// addmember = fonction que l'on va créer dans pgadmin
         try {
             $statuts=0;
             $resultset = $this->_db->prepare($query);
@@ -69,7 +69,7 @@ class MemberDB extends Member{
             $resultset->bindValue(':country', $data['country'], PDO::PARAM_STR);
 
             $resultset->bindValue(':job', $data['job'], PDO::PARAM_STR);
-            $resultset->bindValue(':statuts', $statuts['statuts'], PDO::PARAM_STR);
+            $resultset->bindValue(':statuts', $statuts, PDO::PARAM_STR);
             $resultset->execute();
             $retour = $resultset->fetchColumn(0); // permet le retour de la fonction embarquée (pgadmin)
 

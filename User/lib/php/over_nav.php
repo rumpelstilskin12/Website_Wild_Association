@@ -27,7 +27,7 @@
       <br/>
       <div class="col-lg  ">
         <img class=" img-fluid img-responsive" src="./Admin/images/butter.png" alt="butterfly"/>
-        <a href= <?php if(isset($_SESSION['member'])){?>"index.php?page=donate.php"<?php } ?> class="btn btn-primary border border-primary" role="button" aria-pressed="true" style="">Donate</a>
+        <a href="index.php?page=donate.php" class="btn btn-primary border border-primary" role="button" aria-pressed="true" style="">Donate</a>
         <img class=" img-fluid img-responsive" src="./Admin/images/bee.png" alt="bee"/>
       </div>
     </div>

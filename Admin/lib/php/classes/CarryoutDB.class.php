@@ -7,7 +7,7 @@ class CarryoutDB extends Carryout {
         $this->_db = $db;
     }
 
-    public function getFunction(){
+    public function getCarryout(){
         try{
             $query = "select * from carryout";
            // print $query;
@@ -30,5 +30,18 @@ class CarryoutDB extends Carryout {
             return null;
         }
     }
-    //put your code here
+    public function updateCarryout($champ,$nouveau,$id){
+
+       try {
+
+           $query="UPDATE carryout set ".$champ." = '".$nouveau."' where idcarryout ='".$id."'";
+          // var_dump($id);
+           $resultset = $this->_db->prepare($query);
+           $resultset->execute();
+
+       }catch(PDOException $e){
+           print $e->getMessage();
+       }
+   }
+
 }
