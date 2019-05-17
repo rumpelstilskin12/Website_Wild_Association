@@ -8,8 +8,8 @@
         Mentions légales - Politique de confidentialité
       </p>
     </div>
-    <div class="col-sm ">
-   
+    <div class="col-sm w-100 p-3 ">
+
     </div>
     <div class="col-sm  w-100 p-3" >
       <i class="fab fa-facebook-f mx-2"></i>

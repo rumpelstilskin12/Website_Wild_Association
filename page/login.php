@@ -7,14 +7,15 @@ if (isset($_POST['submit_login'])) {
     extract($_POST, EXTR_OVERWRITE);
     $log = new MemberDB($cnx);
     $member = $log->getMember($member, $password1);
-    var_dump($member);
+    //var_dump($member);
     if (is_null($member)) {
         print "</br>Données incorrectes";
     } else {
         $_SESSION['member'] = 1;
-        $_SESSION['statuts']=0;
-        print "sess ".$_SESSION['statuts'];
+        //$_SESSION['statuts']=0;
+        //print "sess ".$_SESSION['statuts'];
         $_SESSION['idmember']=$member[0]->idmember;
+        $_SESSION['statuts']=$member[0]->statuts;
         unset($_SESSION['page']);
         if($_SESSION['statuts']==1){
         print "<meta http-equiv=\"refresh\": Content=\"3;URL=./admin/index.php\">";

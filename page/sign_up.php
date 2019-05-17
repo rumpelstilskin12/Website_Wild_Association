@@ -10,6 +10,7 @@ if (isset($_GET['submit_signup'])) {
         $member = new MemberDB($cnx);
         $retour = $member->addMember2($_GET);
         $_SESSION['statuts']=$statuts;
+        $_SESSION['statuts']=0;
 
 
         print "Insertion dans la base de données réussie ! <br/>";

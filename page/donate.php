@@ -11,7 +11,7 @@ if (isset($_GET['submit_don'])) {
         print "Insertion dans la base de données réussie ! <br/>";
 
     }
-    var_dump($_GET);
+    //var_dump($_GET);
 }
 
 
@@ -20,9 +20,8 @@ if (isset($erreur))
 ?>
 
 <form action="<?php print $_SERVER['PHP_SELF'];?>" method="get" class-"form-login" style="width:100%; padding-top:30px;padding-bottom: 30px;">
-    <!---<input type="submit" name="submit_login" id="submit_login" value="Se connecter"/>-->
-<!--//background-image:url(./Admin/images/aigle.png);-->
-<div class="col-lg-6" style="margin: 0 auto; border:solid white;border-radius:10px;">
+
+<div class="col-lg-6" style="margin: 0 auto; border:solid white;border-radius:10px;background-image:url(./Admin/images/aigle.png);">
            <div class="login-dark p-3 shadow-lg rounded">
                <div class="pt-3">
                    <h2 class="text-dark text-center">Donate</h2>
