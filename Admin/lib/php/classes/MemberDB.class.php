@@ -14,7 +14,7 @@ class MemberDB extends Member{
                 . "as retour";
 
 
-// addmember = fonction que l'on va créer dans pgadmin
+// addmember = fonction créée dans pgadmin
         try {
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
@@ -51,7 +51,7 @@ class MemberDB extends Member{
                 . "as retour";
 
 
-// addmember = fonction que l'on va créer dans pgadmin
+// addmember2 = fonction créée dans pgadmin
         try {
             $statuts=0;
             $resultset = $this->_db->prepare($query);

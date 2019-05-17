@@ -10,10 +10,9 @@ class CarryoutDB extends Carryout {
     public function getCarryout(){
         try{
             $query = "select * from carryout";
-           // print $query;
+
             $resultset = $this->_db->prepare($query);
-            //$resultset->bindValue(':login',$login);
-            //$resultset->bindValue(':password',$password);
+
             $resultset->execute();
 
             while($data = $resultset->fetch()){
@@ -35,7 +34,6 @@ class CarryoutDB extends Carryout {
        try {
 
            $query="UPDATE carryout set ".$champ." = '".$nouveau."' where idcarryout ='".$id."'";
-          // var_dump($id);
            $resultset = $this->_db->prepare($query);
            $resultset->execute();
 

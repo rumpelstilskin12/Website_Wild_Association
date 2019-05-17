@@ -10,10 +10,9 @@ class missionDB {
     public function getMission(){
         try{
             $query = "select * from mission";
-           // print $query;
+
             $resultset = $this->_db->prepare($query);
-            //$resultset->bindValue(':login',$login);
-            //$resultset->bindValue(':password',$password);
+
             $resultset->execute();
 
             while($data = $resultset->fetch()){
@@ -30,5 +29,5 @@ class missionDB {
             return null;
         }
     }
-    //put your code here
+
 }

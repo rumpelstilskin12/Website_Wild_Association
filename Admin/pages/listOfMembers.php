@@ -4,7 +4,7 @@
 
 <br/><br/>
 <?php
-//récupération des elements pour la liste déroulante
+//récupération des élements pour la liste déroulante
 include('lib/php/v_connection.php');
 $typ = new MemberDB($cnx);
 $types = $typ->__getMember();

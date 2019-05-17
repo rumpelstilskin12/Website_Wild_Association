@@ -40,8 +40,10 @@ if (isset($erreur))
         <label  for="themegoal">Goal to reach :</label>
         <input type="txt"  class="form-control form-control-sm bg-light" name="themegoal" id="themegoal"/>
 
-        <br/>
-
+        <label  for="pictures">Pictures :</label>
+        <input type="txt"  class="form-control form-control-sm bg-light" name="pictures" id="pictures"/>
+         <br/>
+         
         <input class="btn btn-sm btn-light col" type="submit" name="submit" id="submit" value="valider"/>
 
         </div>

@@ -1,6 +1,7 @@
 
 
 <?php
+include('lib/php/v_connection.php');
 if (isset($_GET['submit'])) {
    extract($_GET, EXTR_OVERWRITE);
 

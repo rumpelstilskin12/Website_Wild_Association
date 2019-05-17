@@ -6,11 +6,11 @@
 $typ = new ThemeDB($cnx);
 $types = $typ->getTheme();
 $nbr_type = count($types);
-//récupération des produits dans la vue créée
+//récupération des themes dans la vue créée
 $vue = new VueThemeDB($cnx);
 $liste = array();
 $liste = null;
-//sans filtre de produits
+//sans filtre de themes
 if (!isset($_GET['submit_choix_theme'])) {
     $liste = $vue->getAllTheme();
 }

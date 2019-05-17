@@ -36,7 +36,6 @@ if (isset($erreur))
                     </h3>
                     <form class="form form-signup" role="form">
                     <div class="form-group">
-                        <!--<img href="./Admin/images/owl.png" alt="chouette"/>-->
                         <div class="input-group">
                             <label for="lastname"><img src="Admin/images/worker.png" alt="icon worker" class="px-3"/></label>
                             <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" />

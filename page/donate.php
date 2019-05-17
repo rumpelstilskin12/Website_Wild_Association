@@ -11,7 +11,7 @@ if (isset($_GET['submit_don'])) {
         print "Insertion dans la base de données réussie ! <br/>";
 
     }
-    //var_dump($_GET);
+    
 }
 
 
@@ -45,7 +45,7 @@ if (isset($erreur))
                                                 $themes = $theme->getTheme();
                                                 $nbr = count($themes);
                                             ?>
-                                            <select class="form-control" name="idtheme">
+                                            <select class="form-control form-control-sm bg-light border border-dark" name="idtheme">
                                                 <option class="hidden"  selected disabled>what species do you want to support </option>
                                                  <?php
                                                     for ($i = 0; $i < $nbr; $i++) {?>

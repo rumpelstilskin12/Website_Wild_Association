@@ -1,6 +1,6 @@
 <?php
 include('lib/php/v_connection.php');
-//récupération des elements pour la liste déroulante
+//récupération des élements pour la liste déroulante
 $typ = new ThemeDB($cnx);
 $types = $typ->getTheme();
 $nbr_type = count($types);

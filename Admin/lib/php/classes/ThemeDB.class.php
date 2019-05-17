@@ -8,16 +8,17 @@ class ThemeDB extends Theme {
     }
     public function addThemes($data) {
 
-        $query = "select addthemes(:themename,:countryt,:themegoal)"
+        $query = "select addthemes(:themename,:countryt,:themegoal,:pictures)"
                 . "as retour";
 
 
-    // ajouter_client = fonction que l'on va créer dans pgadmin
+    // addThemes = fonction créée dans pgadmin
         try {
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':themename', $data['themename'], PDO::PARAM_STR);
             $resultset->bindValue(':countryt', $data['countryt'], PDO::PARAM_STR);
             $resultset->bindValue(':themegoal', $data['themegoal'], PDO::PARAM_STR);
+            $resultset->bindValue(':pictures', $data['pictures'], PDO::PARAM_STR);
 
             $resultset->execute();
             $retour = $resultset->fetchColumn(0); // permet le retour de la fonction embarquée (pgadmin)
@@ -28,13 +29,11 @@ class ThemeDB extends Theme {
             print $e->getMessage();
         }
     }
-  public function getTheme(/*$login,$password*/){
+  public function getTheme(){
         try{
             $query = "select * from theme";
-           // print $query;
             $resultset = $this->_db->prepare($query);
-            //$resultset->bindValue(':login',$login);
-            //$resultset->bindValue(':password',$password);
+
             $resultset->execute();
 
             while($data = $resultset->fetch()){
@@ -51,5 +50,5 @@ class ThemeDB extends Theme {
             return null;
         }
     }
-    //put your code here
+
 }

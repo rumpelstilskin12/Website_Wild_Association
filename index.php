@@ -49,7 +49,6 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
                 $_SESSION['page'] = $_GET['page'];
             }
             $path = "./page/".$_SESSION['page'];
-            //$_SESSION = array();//vider la session
 
 
             if (file_exists($path)) {
@@ -70,14 +69,13 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
         </section>
 
         <footer class="footer" style= "background-color:#eeeeee;">
-            <!--<div class="container text-center w-100 p-3" >-->
+
               <?php
               if (file_exists('./lib/php/footer.php')) {
                   require './lib/php/footer.php';
               }
               ?>
 
-            <!--</div>-->
 
 
         </footer>

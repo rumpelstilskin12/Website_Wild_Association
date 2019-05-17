@@ -21,7 +21,7 @@ $(document).ready(function(){
 
         $(this).blur(function () {
             $(this).removeClass("borderInput");
-           //récupération de la nouveau contenu du champ qui vient de perdre le focus (blur)
+           //récupération du nouveau contenu du champ qui vient de perdre le focus (blur)
             var valeur2 = $(this).text();
             valeur2 = $.trim(valeur2);
 

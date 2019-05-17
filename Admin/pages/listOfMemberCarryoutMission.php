@@ -1,7 +1,7 @@
 
 <?php
 include ('./lib/php/v_connection.php');
-//récupération des produits
+//récupération des missions effectué par des membres
 $vue = new VueMCMDB($cnx);
 $liste = array();
 $liste = null;

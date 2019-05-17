@@ -12,7 +12,7 @@ class DonDB extends Don {
                       . "as retour";
 
 
-      // adddon = fonction que l'on va créer dans pgadmin
+      // adddon = fonction créée dans pgadmin
               try {
                   $resultset = $this->_db->prepare($query);
                   $resultset->bindValue(':amount', $data['amount'], PDO::PARAM_STR);
@@ -35,10 +35,9 @@ class DonDB extends Don {
     public function getDon($login,$password){
         try{
             $query = "select * from don";
-           // print $query;
+
             $resultset = $this->_db->prepare($query);
-            //$resultset->bindValue(':login',$login);
-            //$resultset->bindValue(':password',$password);
+
             $resultset->execute();
 
             while($data = $resultset->fetch()){
@@ -55,5 +54,5 @@ class DonDB extends Don {
             return null;
         }
     }
-    //put your code here
+
 }
