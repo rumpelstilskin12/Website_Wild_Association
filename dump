@@ -1,0 +1,732 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.1
+-- Dumped by pg_dump version 11.1
+
+-- Started on 2019-05-19 15:38:53
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3 (class 2615 OID 2200)
+-- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
+--
+
+CREATE SCHEMA public;
+
+
+ALTER SCHEMA public OWNER TO postgres;
+
+--
+-- TOC entry 2885 (class 0 OID 0)
+-- Dependencies: 3
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+
+--
+-- TOC entry 210 (class 1255 OID 16911)
+-- Name: adddon(real, date, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.adddon(real, date, integer, integer) RETURNS integer
+    LANGUAGE plpgsql
+    AS $_$
+
+DECLARE v_amount ALIAS FOR $1;
+ DECLARE v_datedon ALIAS FOR $2;
+ DECLARE v_idtheme ALIAS FOR $3;
+ DECLARE v_idmember ALIAS FOR $4;
+ DECLARE id integer;
+ DECLARE retour integer;
+
+BEGIN
+
+ SELECT INTO id iddon FROM don where amount = v_amount;
+ IF NOT FOUND
+ THEN
+   retour=-1;
+
+    INSERT INTO don (amount,datedon,idtheme,idmember) values
+
+    (v_amount,v_datedon,v_idtheme,v_idmember);
+
+    SELECT INTO id iddon FROM don where amount = v_amount;
+    IF NOT FOUND
+    THEN
+      retour=0;
+    ELSE
+      retour=1;
+    END IF;
+ ELSE
+   retour=2;
+ END IF;
+
+
+ return retour;
+ END;
+ $_$;
+
+
+ALTER FUNCTION public.adddon(real, date, integer, integer) OWNER TO postgres;
+
+--
+-- TOC entry 224 (class 1255 OID 16632)
+-- Name: addmember(text, text, text, text, text, date, text, text, text, text, text, integer); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.addmember(text, text, text, text, text, date, text, text, text, text, text, integer) RETURNS integer
+    LANGUAGE plpgsql
+    AS $_$ DECLARE v_lastname ALIAS FOR $1;
+ DECLARE v_firstname ALIAS FOR $2;
+ DECLARE v_phone ALIAS FOR $3;
+ DECLARE v_email ALIAS FOR $4;
+ DECLARE v_password1 ALIAS FOR $5;
+ DECLARE v_birthdate ALIAS FOR $6;
+ DECLARE v_street ALIAS FOR $7;
+ DECLARE v_city ALIAS FOR $8;
+ DECLARE v_postcode ALIAS FOR $9;
+ DECLARE v_country ALIAS FOR $10;
+ DECLARE v_job ALIAS FOR $11;
+ DECLARE v_statuts ALIAS FOR $12;
+ DECLARE id integer;
+ DECLARE retour integer;
+
+BEGIN
+
+ SELECT INTO id idmember FROM member where lastname = v_lastname;
+ IF NOT FOUND
+ THEN
+   retour=-1;
+
+    INSERT INTO member (lastname,firstname,phone,email,password1,birthdate,street,city,postcode,country,job,statuts) values
+
+    (v_lastname,v_firstname,v_phone,v_email,v_password1,v_birthdate,v_street,v_city,v_postcode,v_country,v_job,v_statuts);
+
+    SELECT INTO id idmember FROM member where lastname = v_lastname;
+    IF NOT FOUND
+    THEN
+      retour=0;
+    ELSE
+      retour=1;
+    END IF;
+ ELSE
+   retour=2;
+ END IF;
+
+
+ return retour;
+ END;
+$_$;
+
+
+ALTER FUNCTION public.addmember(text, text, text, text, text, date, text, text, text, text, text, integer) OWNER TO postgres;
+
+--
+-- TOC entry 208 (class 1255 OID 16629)
+-- Name: addthemes(text, text, text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.addthemes(text, text, text) RETURNS integer
+    LANGUAGE plpgsql
+    AS $_$
+
+DECLARE v_themename ALIAS FOR $1;
+ DECLARE v_countryt ALIAS FOR $2;
+ DECLARE v_themegoal ALIAS FOR $3;
+ DECLARE id integer;
+ DECLARE retour integer;
+
+BEGIN
+
+ SELECT INTO id idtheme FROM theme where themename = v_themename;
+ IF NOT FOUND
+ THEN
+   retour=-1;
+
+    INSERT INTO theme (themename,countryt,themegoal) values
+
+    (v_themename,v_countryt,v_themegoal);
+
+    SELECT INTO id idtheme FROM theme where themename = v_themename;
+    IF NOT FOUND
+    THEN
+      retour=0;
+    ELSE
+      retour=1;
+    END IF;
+ ELSE
+   retour=2;
+ END IF;
+
+
+ return retour;
+ END;
+ $_$;
+
+
+ALTER FUNCTION public.addthemes(text, text, text) OWNER TO postgres;
+
+--
+-- TOC entry 223 (class 1255 OID 16913)
+-- Name: addthemes(text, text, text, text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.addthemes(text, text, text, text) RETURNS integer
+    LANGUAGE plpgsql
+    AS $_$
+
+DECLARE v_themename ALIAS FOR $1;
+ DECLARE v_countryt ALIAS FOR $2;
+ DECLARE v_themegoal ALIAS FOR $3;
+ DECLARE v_pictures ALIAS FOR $4;
+ DECLARE id integer;
+ DECLARE retour integer;
+
+BEGIN
+
+ SELECT INTO id idtheme FROM theme where themename = v_themename;
+ IF NOT FOUND
+ THEN
+   retour=-1;
+
+    INSERT INTO theme (themename,countryt,themegoal,pictures) values
+
+    (v_themename,v_countryt,v_themegoal,v_pictures);
+
+    SELECT INTO id idtheme FROM theme where themename = v_themename;
+    IF NOT FOUND
+    THEN
+      retour=0;
+    ELSE
+      retour=1;
+    END IF;
+ ELSE
+   retour=2;
+ END IF;
+
+
+ return retour;
+ END;
+ $_$;
+
+
+ALTER FUNCTION public.addthemes(text, text, text, text) OWNER TO postgres;
+
+--
+-- TOC entry 209 (class 1255 OID 16429)
+-- Name: inserer_fleur(text, integer, real, integer); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.inserer_fleur(text, integer, real, integer) RETURNS integer
+    LANGUAGE plpgsql
+    AS $_$
+DECLARE f_nom alias for $1;
+DECLARE f_id_c alias for $2;
+DECLARE f_prix alias for $3;
+DECLARE f_quantite alias for $4;
+declare retour integer;
+
+begin
+insert into fleur (nom_fleur,id_couleur,prix_fleur,quantite_fleur) values (f_nom,f_id_c,f_prix,f_quantite);
+return 1;
+end;
+$_$;
+
+
+ALTER FUNCTION public.inserer_fleur(text, integer, real, integer) OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 205 (class 1259 OID 16867)
+-- Name: carryout; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.carryout (
+    idcarryout integer NOT NULL,
+    startdate date NOT NULL,
+    enddate date NOT NULL,
+    idmember integer NOT NULL,
+    idmission integer NOT NULL
+);
+
+
+ALTER TABLE public.carryout OWNER TO postgres;
+
+--
+-- TOC entry 204 (class 1259 OID 16865)
+-- Name: carryout_idcarryout_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.carryout_idcarryout_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.carryout_idcarryout_seq OWNER TO postgres;
+
+--
+-- TOC entry 2886 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: carryout_idcarryout_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.carryout_idcarryout_seq OWNED BY public.carryout.idcarryout;
+
+
+--
+-- TOC entry 201 (class 1259 OID 16845)
+-- Name: don; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.don (
+    iddon integer NOT NULL,
+    amount real NOT NULL,
+    datedon date NOT NULL,
+    idtheme integer NOT NULL,
+    idmember integer NOT NULL
+);
+
+
+ALTER TABLE public.don OWNER TO postgres;
+
+--
+-- TOC entry 200 (class 1259 OID 16843)
+-- Name: don_iddon_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.don_iddon_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.don_iddon_seq OWNER TO postgres;
+
+--
+-- TOC entry 2887 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: don_iddon_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.don_iddon_seq OWNED BY public.don.iddon;
+
+
+--
+-- TOC entry 197 (class 1259 OID 16812)
+-- Name: member; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.member (
+    idmember integer NOT NULL,
+    lastname text,
+    firstname text,
+    phone text,
+    email text,
+    password1 text,
+    birthdate date NOT NULL,
+    street text,
+    city text,
+    postcode text,
+    country text,
+    job text,
+    statuts integer DEFAULT 0 NOT NULL
+);
+
+
+ALTER TABLE public.member OWNER TO postgres;
+
+--
+-- TOC entry 196 (class 1259 OID 16810)
+-- Name: member_idmember_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.member_idmember_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.member_idmember_seq OWNER TO postgres;
+
+--
+-- TOC entry 2888 (class 0 OID 0)
+-- Dependencies: 196
+-- Name: member_idmember_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.member_idmember_seq OWNED BY public.member.idmember;
+
+
+--
+-- TOC entry 199 (class 1259 OID 16834)
+-- Name: mission; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.mission (
+    idmission integer NOT NULL,
+    rolem text NOT NULL,
+    countrym text NOT NULL,
+    descriptionm text NOT NULL
+);
+
+
+ALTER TABLE public.mission OWNER TO postgres;
+
+--
+-- TOC entry 198 (class 1259 OID 16832)
+-- Name: mission_idmission_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.mission_idmission_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.mission_idmission_seq OWNER TO postgres;
+
+--
+-- TOC entry 2889 (class 0 OID 0)
+-- Dependencies: 198
+-- Name: mission_idmission_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.mission_idmission_seq OWNED BY public.mission.idmission;
+
+
+--
+-- TOC entry 203 (class 1259 OID 16856)
+-- Name: theme; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.theme (
+    idtheme integer NOT NULL,
+    themename text NOT NULL,
+    countryt text NOT NULL,
+    themegoal text NOT NULL,
+    pictures text
+);
+
+
+ALTER TABLE public.theme OWNER TO postgres;
+
+--
+-- TOC entry 202 (class 1259 OID 16854)
+-- Name: theme_idtheme_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.theme_idtheme_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.theme_idtheme_seq OWNER TO postgres;
+
+--
+-- TOC entry 2890 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: theme_idtheme_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.theme_idtheme_seq OWNED BY public.theme.idtheme;
+
+
+--
+-- TOC entry 206 (class 1259 OID 16902)
+-- Name: vue_member_carryout_mission; Type: VIEW; Schema: public; Owner: postgres
+--
+
+CREATE VIEW public.vue_member_carryout_mission AS
+ SELECT c.idcarryout,
+    m.idmember,
+    m.lastname,
+    m.firstname,
+    c.startdate,
+    c.enddate,
+    b.rolem,
+    b.countrym
+   FROM ((public.member m
+     JOIN public.carryout c ON ((m.idmember = c.idmember)))
+     JOIN public.mission b ON ((c.idmission = b.idmission)));
+
+
+ALTER TABLE public.vue_member_carryout_mission OWNER TO postgres;
+
+--
+-- TOC entry 207 (class 1259 OID 16907)
+-- Name: vue_theme; Type: VIEW; Schema: public; Owner: postgres
+--
+
+CREATE VIEW public.vue_theme AS
+ SELECT theme.idtheme,
+    theme.themename,
+    theme.countryt,
+    theme.themegoal,
+    theme.pictures
+   FROM public.theme;
+
+
+ALTER TABLE public.vue_theme OWNER TO postgres;
+
+--
+-- TOC entry 2731 (class 2604 OID 16870)
+-- Name: carryout idcarryout; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carryout ALTER COLUMN idcarryout SET DEFAULT nextval('public.carryout_idcarryout_seq'::regclass);
+
+
+--
+-- TOC entry 2729 (class 2604 OID 16848)
+-- Name: don iddon; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.don ALTER COLUMN iddon SET DEFAULT nextval('public.don_iddon_seq'::regclass);
+
+
+--
+-- TOC entry 2726 (class 2604 OID 16815)
+-- Name: member idmember; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.member ALTER COLUMN idmember SET DEFAULT nextval('public.member_idmember_seq'::regclass);
+
+
+--
+-- TOC entry 2728 (class 2604 OID 16837)
+-- Name: mission idmission; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.mission ALTER COLUMN idmission SET DEFAULT nextval('public.mission_idmission_seq'::regclass);
+
+
+--
+-- TOC entry 2730 (class 2604 OID 16859)
+-- Name: theme idtheme; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.theme ALTER COLUMN idtheme SET DEFAULT nextval('public.theme_idtheme_seq'::regclass);
+
+
+--
+-- TOC entry 2879 (class 0 OID 16867)
+-- Dependencies: 205
+-- Data for Name: carryout; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.carryout (idcarryout, startdate, enddate, idmember, idmission) VALUES (2, '2019-08-13', '2020-05-14', 4, 2);
+INSERT INTO public.carryout (idcarryout, startdate, enddate, idmember, idmission) VALUES (1, '2021-04-12', '2090-05-13', 3, 1);
+
+
+--
+-- TOC entry 2875 (class 0 OID 16845)
+-- Dependencies: 201
+-- Data for Name: don; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.don (iddon, amount, datedon, idtheme, idmember) VALUES (11, 10, '2019-05-18', 1, 2);
+INSERT INTO public.don (iddon, amount, datedon, idtheme, idmember) VALUES (12, 25, '2019-05-18', 2, 2);
+
+
+--
+-- TOC entry 2871 (class 0 OID 16812)
+-- Dependencies: 197
+-- Data for Name: member; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (1, 'admin', 'admin', '0486541819', 'admin@gmail.com', 'admin', '2018-05-23', 'paul', 'marcinelle', '6001', 'belgium', 'admin', 1);
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (2, 'user', 'user', 'a', 'user@gmail.com', 'user', '2019-05-24', 'a', 'mons', '6058', 'belgium', 'info', 0);
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (3, 'paul', 'george', '2233', 'paul@gmail.com', 'mom', '2018-05-22', 'p', 'mons', '5001', 'belgium', 'medecin', 0);
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (4, 'marie', 'christine', '2222222222222', 'marie@gmail.com', 'dad', '2019-05-16', 'marie', 'mons', '6070', 'belgium', 'ingenieur', 0);
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (5, 'ibrahim', 'amin', '3232323', 'mz@gmail.com', 'kid', '2019-05-16', 'aaa', 'mons', '2323', 'belgium', 'ouvrier', 0);
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (6, 'pep', 'guardiola', 'azgzaghaz', 'pep@gmail.com', 'kids', '2019-05-16', 'azzaaz', 'mons', '2332', 'belgium', 'dentiste', 0);
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (11, 'Walid', 'Kherbahce', '777878778878', 'wk@gmail.com', 'wk', '2019-05-18', 'walid', 'walid', 'w', 'w', 'w', 0);
+INSERT INTO public.member (idmember, lastname, firstname, phone, email, password1, birthdate, street, city, postcode, country, job, statuts) VALUES (12, 'walid', 'kherbache', '44444444', 'WK@gmail.com', 'wk', '2019-05-18', 'wk', 'wk', '6666', 'wk', 'wk', 1);
+
+
+--
+-- TOC entry 2873 (class 0 OID 16834)
+-- Dependencies: 199
+-- Data for Name: mission; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.mission (idmission, rolem, countrym, descriptionm) VALUES (1, 'veterinaire', 'belgium', 'help');
+
+
+--
+-- TOC entry 2877 (class 0 OID 16856)
+-- Dependencies: 203
+-- Data for Name: theme; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.theme (idtheme, themename, countryt, themegoal, pictures) VALUES (1, 'Gorilla', 'Cameroon', 'protection', 'gorilla.jpg');
+INSERT INTO public.theme (idtheme, themename, countryt, themegoal, pictures) VALUES (2, 'Lynx', 'Canada', 'protection', 'lynxC.jpg');
+INSERT INTO public.theme (idtheme, themename, countryt, themegoal, pictures) VALUES (3, 'Polar bear', 'Arctic', 'protection', 'polarbear.jpg');
+INSERT INTO public.theme (idtheme, themename, countryt, themegoal, pictures) VALUES (4, 'Snow Leopard', 'Mongolia', 'protection', 'snow.jpg');
+INSERT INTO public.theme (idtheme, themename, countryt, themegoal, pictures) VALUES (5, 'Wild cat', 'Morocco', 'protection', 'wildcat1.jpg');
+
+
+--
+-- TOC entry 2891 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: carryout_idcarryout_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.carryout_idcarryout_seq', 1, false);
+
+
+--
+-- TOC entry 2892 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: don_iddon_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.don_iddon_seq', 12, true);
+
+
+--
+-- TOC entry 2893 (class 0 OID 0)
+-- Dependencies: 196
+-- Name: member_idmember_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.member_idmember_seq', 12, true);
+
+
+--
+-- TOC entry 2894 (class 0 OID 0)
+-- Dependencies: 198
+-- Name: mission_idmission_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.mission_idmission_seq', 1, false);
+
+
+--
+-- TOC entry 2895 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: theme_idtheme_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.theme_idtheme_seq', 5, true);
+
+
+--
+-- TOC entry 2743 (class 2606 OID 16872)
+-- Name: carryout carryout_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carryout
+    ADD CONSTRAINT carryout_pkey PRIMARY KEY (idcarryout);
+
+
+--
+-- TOC entry 2739 (class 2606 OID 16853)
+-- Name: don don_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.don
+    ADD CONSTRAINT don_pkey PRIMARY KEY (iddon);
+
+
+--
+-- TOC entry 2733 (class 2606 OID 16900)
+-- Name: member email_uk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.member
+    ADD CONSTRAINT email_uk UNIQUE (email) INCLUDE (email);
+
+
+--
+-- TOC entry 2735 (class 2606 OID 16820)
+-- Name: member member_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.member
+    ADD CONSTRAINT member_pkey PRIMARY KEY (idmember);
+
+
+--
+-- TOC entry 2737 (class 2606 OID 16842)
+-- Name: mission mission_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.mission
+    ADD CONSTRAINT mission_pkey PRIMARY KEY (idmission);
+
+
+--
+-- TOC entry 2741 (class 2606 OID 16864)
+-- Name: theme theme_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.theme
+    ADD CONSTRAINT theme_pkey PRIMARY KEY (idtheme);
+
+
+--
+-- TOC entry 2746 (class 2606 OID 16893)
+-- Name: carryout carryout_idmember_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carryout
+    ADD CONSTRAINT carryout_idmember_fkey FOREIGN KEY (idmember) REFERENCES public.member(idmember);
+
+
+--
+-- TOC entry 2744 (class 2606 OID 16883)
+-- Name: don don_idmember_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.don
+    ADD CONSTRAINT don_idmember_fkey FOREIGN KEY (idmember) REFERENCES public.member(idmember);
+
+
+--
+-- TOC entry 2745 (class 2606 OID 16888)
+-- Name: don don_idtheme_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.don
+    ADD CONSTRAINT don_idtheme_fkey FOREIGN KEY (idtheme) REFERENCES public.theme(idtheme);
+
+
+-- Completed on 2019-05-19 15:38:53
+
+--
+-- PostgreSQL database dump complete
+--
